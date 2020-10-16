@@ -35,10 +35,7 @@ public class IndexContents : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI pageContentsText;
 
-    //INPUT
-    [SerializeField]
-    private TMP_InputField input;
-
+    
     //SETS BASE NUMBER FOR PAGES
     public int pageBaseNumber;
     void Start()
@@ -51,10 +48,7 @@ public class IndexContents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            setContentsText();
-        }
+        
     }
 
     void setToText()
@@ -82,15 +76,6 @@ public class IndexContents : MonoBehaviour
         }
     }
     
-    void setContentsText()
-    {
-        headlineAndTopic.SetActive(false);
-
-        int num = int.Parse(input.text);
-        num -= pageBaseNumber;
-
-        pageContents.SetActive(true);
-        pageContentsText.text = pageText[num];
-    }
+    
 
 }
